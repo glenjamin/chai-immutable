@@ -56,7 +56,9 @@
           this.assert(
             size === 0,
             'expected #{this} to be empty but got size #{act}',
-            'expected #{this} to not be empty'
+            'expected #{this} to not be empty',
+            0,
+            size
           );
         }
         else _super.apply(this, arguments);
@@ -105,8 +107,8 @@
             Immutable.is(obj, collection),
             'expected #{act} to equal #{exp}',
             'expected #{act} to not equal #{exp}',
-            collection.toString(),
-            obj.toString(),
+            collection,
+            obj,
             true
           );
         }
@@ -152,7 +154,7 @@
             'expected #{act} to include #{exp}',
             'expected #{act} to not include #{exp}',
             val,
-            obj.toString()
+            obj
           );
         }
         else _super.apply(this, arguments);
@@ -271,7 +273,7 @@
             'expected #{act} to ' + str,
             'expected #{act} to not ' + str,
             keys,
-            obj.toString()
+            obj
           );
         }
         else _super.apply(this, arguments);
@@ -472,7 +474,8 @@
               'expected #{this} not to have a ' + descriptor + utils.inspect(path) +
                 ' of #{act}',
               val,
-              value
+              value,
+              true
             );
           }
 

@@ -23,6 +23,8 @@ else typeEnv = 'PhantomJS';
 
 var clonedImmutable = clone(Immutable);
 
+chai.config.truncateThreshold = 0;
+
 var assert = chai.assert;
 var expect = chai.expect;
 var List = Immutable.List;
